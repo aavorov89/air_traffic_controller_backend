@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Plane < ApplicationRecord
-  enum status: %i[normal active completed]
+  enum status: { normal: 0, active: 1, completed: 2 }
 end

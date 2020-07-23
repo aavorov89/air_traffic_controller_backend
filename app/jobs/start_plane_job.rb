@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StartPlaneJob < ApplicationJob
   queue_as :default
 

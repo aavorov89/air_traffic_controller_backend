@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   resources :planes, only: %i[index show] do
     resources :start, only: %i[create]

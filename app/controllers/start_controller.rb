@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class StartController < ApplicationController
   before_action :set_plane, only: %i[create]
 
   def create
     unless @plane.status == 'normal'
-      render json: {}, status: 400
+      render json: {}, status: :bad_request
       return
     end
 
@@ -14,7 +16,7 @@ class StartController < ApplicationController
 
     StartPlaneJob.perform_later(@plane.id)
 
-    render json: {}, status: 201
+    render json: {}, status: :created
   end
 
   private

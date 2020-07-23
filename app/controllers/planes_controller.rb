@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PlanesController < ApplicationController
   before_action :set_plane, only: %i[show]
 
@@ -14,8 +16,9 @@ class PlanesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_plane
-      @plane = Plane.find(params[:id])
-    end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_plane
+    @plane = Plane.find(params[:id])
+  end
 end
